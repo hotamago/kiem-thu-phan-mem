@@ -12,14 +12,14 @@ Chỉ sửa dòng task của mình (và thêm dòng mới ở cuối bảng). Ng
 
 | ID | Task | Người nhận | Trạng thái | Phụ thuộc | Cập nhật / kết quả |
 |---|---|---|---|---|---|
-| T02 | BT 22/11 – Mục 1: chọn đoạn mã có câu lệnh điều kiện (không quá đơn giản), đưa vào `bt-short-nhom/22-11/src/` | | todo | – | |
+| T02 | BT 22/11 – Mục 1: chọn đoạn mã có câu lệnh điều kiện (không quá đơn giản), đưa vào `bai-tap-nhom/22-11/src/` | | todo | – | |
 | T03 | BT 22/11 – Mục 2: thiết kế test case (nêu rõ tool dùng nếu có) | | todo | T02 | |
 | T04 | BT 22/11 – Mục 3: đánh giá độ bao phủ của bộ test (statement/branch/condition…) | | todo | T03 | |
 | T05 | BT 22/11 – Mục 4: so sánh khả năng sinh test của các công cụ / tiêu chí khác nhau | | todo | T02 | |
 | T06 | BT 22/11 – Mục 5: kiểm tra lại bằng phân tích trực tiếp, tổng hợp ý kiến nhóm | | todo | T03, T04 | |
-| T07 | BT 22/11 – Hoàn thiện báo cáo `bt-short-nhom/22-11/report/`, build PDF, nộp | | todo | T02–T06 | |
-| T10 | BTL – Đọc 3 hướng đề tài (`docs/btl-de-tai.md`), mỗi người đề xuất 1 hướng + lý do | | todo | – | |
-| T11 | BTL – Chốt đề tài, đăng ký với GV, cập nhật `btl/README.md` | | todo | T10 | |
+| T07 | BT 22/11 – Hoàn thiện báo cáo `bai-tap-nhom/22-11/report/`, build PDF, nộp | | todo | T02–T06 | |
+| T10 | BTL – Đọc 3 hướng đề tài (`docs/de-tai-bai-tap-lon.md`), mỗi người đề xuất 1 hướng + lý do | | todo | – | |
+| T11 | BTL – Chốt đề tài, đăng ký với GV, cập nhật `bai-tap-lon/README.md` | | todo | T10 | |
 
 ## Đã xong
 

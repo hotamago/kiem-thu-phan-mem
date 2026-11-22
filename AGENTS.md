@@ -31,9 +31,9 @@ agent của họ) không làm trùng, không sửa đè lên nhau.
 - Học phần **Kiểm chứng và Thẩm định phần mềm** (Software Verification & Validation), hệ cao
   học, Trường CNTT&TT – ĐHBK Hà Nội. **Nhóm 8**, 5 học viên (danh sách: `docs/info.md`).
 - Hai loại bài:
-  - **Bài tập nhóm ngắn trên lớp** – `bt-short-nhom/<DD-MM>/`, mỗi buổi một thư mục.
-  - **Bài tập lớn (BTL)** – `btl/`. Nhóm **chưa chọn đề tài**; 3 hướng của giảng viên được tóm tắt
-    trong `docs/btl-de-tai.md`.
+  - **Bài tập nhóm ngắn trên lớp** – `bai-tap-nhom/<DD-MM>/`, mỗi buổi một thư mục.
+  - **Bài tập lớn (BTL)** – `bai-tap-lon/`. Nhóm **chưa chọn đề tài**; 3 hướng của giảng viên được tóm tắt
+    trong `docs/de-tai-bai-tap-lon.md`.
 - Tài liệu gốc của giảng viên (slide, đề BTL) chỉ để ở máy trong `docs/org/` (gitignored). Agent
   đọc bản tóm tắt trong `docs/`; cần chi tiết thì đọc PDF trong `docs/org/` nếu máy có.
 
@@ -41,13 +41,13 @@ agent của họ) không làm trùng, không sửa đè lên nhau.
 
 | Thứ cần thêm | Đặt ở đâu |
 |---|---|
-| Đề một buổi bài tập ngắn | `bt-short-nhom/<DD-MM>/task.md`; ảnh/file đính kèm của đề → `.../assets/` |
-| Báo cáo bài tập ngắn | `bt-short-nhom/<DD-MM>/report/` (LaTeX, tạo bằng `scripts/new_doc.py`) |
-| Mã nguồn / test của bài tập ngắn | `bt-short-nhom/<DD-MM>/src/`, `.../tests/` |
+| Đề một buổi bài tập ngắn | `bai-tap-nhom/<DD-MM>/task.md`; ảnh/file đính kèm của đề → `.../assets/` |
+| Báo cáo bài tập ngắn | `bai-tap-nhom/<DD-MM>/report/` (LaTeX, tạo bằng `scripts/new_doc.py`) |
+| Mã nguồn / test của bài tập ngắn | `bai-tap-nhom/<DD-MM>/src/`, `.../tests/` |
 | Hình dùng trong báo cáo | `.../report/figures/` (hình vẽ/ảnh chụp do nhóm tạo) |
 | Kết quả chạy (coverage, mutation, log) | `.../results/` – báo cáo HTML nặng thì chỉ commit bản tóm tắt (csv/txt/ảnh) |
-| BTL: mã nguồn, thực nghiệm | `btl/` (cấu trúc con chốt sau khi chọn đề tài, ghi vào `btl/README.md`) |
-| BTL: báo cáo / slide | `btl/report/`, `btl/slide/` |
+| BTL: mã nguồn, thực nghiệm | `bai-tap-lon/` (cấu trúc con chốt sau khi chọn đề tài, ghi vào `bai-tap-lon/README.md`) |
+| BTL: báo cáo / slide | `bai-tap-lon/report/`, `bai-tap-lon/slide/` |
 | Template LaTeX dùng chung | `templates/report/`, `templates/slide/` – chỉ sửa khi cả nhóm cần |
 | Script tiện ích | `scripts/` (Python chỉ dùng thư viện chuẩn, hoặc khai báo phụ thuộc kiểu PEP 723 để chạy bằng `uv run`) |
 | Tài liệu chung, ghi chú họp | `docs/` |
@@ -59,7 +59,7 @@ Mỗi tài liệu LaTeX là một thư mục **tự chứa** (có `main.tex`/`sl
 
 Chi tiết: `docs/latex.md`. Tóm tắt:
 
-- **Tạo mới:** `python3 scripts/new_doc.py report bt-short-nhom/29-11/report --kind "BÁO CÁO BÀI TẬP NHÓM TRÊN LỚP" --title "..." --short "..."`
+- **Tạo mới:** `python3 scripts/new_doc.py report bai-tap-nhom/29-11/report --kind "BÁO CÁO BÀI TẬP NHÓM TRÊN LỚP" --title "..." --short "..."`
   (slide: `python3 scripts/new_doc.py slide <thư-mục> ...`).
 - **Biên dịch:** `scripts/build_tex.sh <thư-mục>` (XeLaTeX qua tectonic hoặc latexmk). Không có
   LaTeX thì dùng Overleaf: `python3 scripts/overleaf_zip.py <thư-mục>` rồi upload zip, chọn
@@ -94,7 +94,7 @@ Chi tiết: `docs/latex.md`. Tóm tắt:
     Không giữ nhánh riêng lâu.
 - Luôn `git pull --rebase` trước khi push. Không `push --force` lên `main`.
 - Commit nhỏ, message tiếng Anh dạng Conventional Commits: `feat: …`, `fix: …`, `docs: …`,
-  `test: …`, `chore(tasks): …`. Phạm vi gợi ý: `docs(bt-22-11): …`, `feat(btl): …`.
+  `test: …`, `chore(tasks): …`. Phạm vi gợi ý: `docs(22-11): …`, `feat(bai-tap-lon): …`.
 - **Không bao giờ commit:** slide/đề của giảng viên (`docs/org/`, `docs/*.zip`), `.env`, API key,
   file build (`*.aux`, `*.log`, `build/`, `target/`…), file lớn > 10 MB.
 

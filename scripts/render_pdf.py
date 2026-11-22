@@ -5,7 +5,7 @@
 """Render trang PDF ra PNG để kiểm tra nhanh bố cục (agent đọc được ảnh).
 
     uv run scripts/render_pdf.py <file.pdf> [thư-mục-ra] [trang ...]
-    vd: uv run scripts/render_pdf.py bt-short-nhom/22-11/report/main.pdf 1 2
+    vd: uv run scripts/render_pdf.py bai-tap-nhom/22-11/report/main.pdf 1 2
 
 Mặc định trang 1, ảnh ghi vào <thư mục PDF>/_render/ (đã gitignore).
 """

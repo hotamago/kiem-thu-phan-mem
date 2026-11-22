@@ -2,8 +2,8 @@
 # Biên dịch một tài liệu LaTeX (XeLaTeX) thành PDF.
 #
 #   scripts/build_tex.sh <thư-mục> [file.tex]
-#   vd: scripts/build_tex.sh bt-short-nhom/22-11/report
-#       scripts/build_tex.sh btl/slide slides.tex
+#   vd: scripts/build_tex.sh bai-tap-nhom/22-11/report
+#       scripts/build_tex.sh bai-tap-lon/slide slides.tex
 #
 # Mặc định file là main.tex (nếu không có thì slides.tex). PDF nằm cạnh file .tex.
 # Ưu tiên tectonic (tự tải gói khi cần), sau đó latexmk -xelatex (TeX Live).

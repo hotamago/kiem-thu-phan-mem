@@ -18,24 +18,24 @@ Verification & Validation), hệ cao học, Trường CNTT&TT – ĐHBK Hà Nộ
 
 ```
 .
-├── AGENTS.md              # quy ước chung cho thành viên + agent (CLAUDE.md trỏ tới file này)
+├── AGENTS.md                  # quy ước chung cho thành viên + agent (CLAUDE.md trỏ tới file này)
 ├── docs/
-│   ├── info.md            # thông tin nhóm, link danh sách lớp
-│   ├── tasks.md           # bảng task: nhận việc / cập nhật / xong
-│   ├── btl-de-tai.md      # tóm tắt 3 hướng đề tài BTL của giảng viên
-│   ├── latex.md           # hướng dẫn viết & biên dịch báo cáo/slide
-│   └── org/               # (chỉ ở máy, gitignored) slide + đề gốc của giảng viên
-├── bt-short-nhom/         # bài tập nhóm ngắn trên lớp, mỗi buổi một thư mục DD-MM/
-│   └── 22-11/             #   task.md (đề) · assets/ (ảnh đề) · report/ · src/ · tests/ · results/
-├── btl/                   # bài tập lớn (chưa chọn đề tài) – report/, slide/, mã nguồn
+│   ├── info.md                # thông tin nhóm, link danh sách lớp
+│   ├── tasks.md               # bảng task: nhận việc / cập nhật / xong
+│   ├── de-tai-bai-tap-lon.md  # tóm tắt 3 hướng đề tài BTL của giảng viên
+│   ├── latex.md               # hướng dẫn viết & biên dịch báo cáo/slide
+│   └── org/                   # (chỉ ở máy, gitignored) slide + đề gốc của giảng viên
+├── bai-tap-nhom/              # bài tập nhóm ngắn trên lớp, mỗi buổi một thư mục DD-MM/
+│   └── 22-11/                 # task.md (đề) · assets/ (ảnh đề) · report/ · src/ · tests/ · results/
+├── bai-tap-lon/               # bài tập lớn (chưa chọn đề tài) – report/, slide/, mã nguồn
 ├── templates/
-│   ├── report/            # template báo cáo LaTeX (XeLaTeX, style HUST đỏ/trắng)
-│   └── slide/             # template slide Beamer 16:9
+│   ├── report/                # template báo cáo LaTeX (XeLaTeX, style HUST đỏ/trắng)
+│   └── slide/                 # template slide Beamer 16:9
 └── scripts/
-    ├── new_doc.py         # tạo báo cáo/slide mới từ template
-    ├── build_tex.sh       # biên dịch LaTeX -> PDF (tectonic / latexmk)
-    ├── overleaf_zip.py    # đóng gói thư mục LaTeX để upload Overleaf
-    └── render_pdf.py      # render trang PDF -> PNG để soát bố cục
+    ├── new_doc.py             # tạo báo cáo/slide mới từ template
+    ├── build_tex.sh           # biên dịch LaTeX -> PDF (tectonic / latexmk)
+    ├── overleaf_zip.py        # đóng gói thư mục LaTeX để upload Overleaf
+    └── render_pdf.py          # render trang PDF -> PNG để soát bố cục
 ```
 
 ## Bắt đầu nhanh
@@ -45,14 +45,14 @@ git clone git@github.com:hotamago/kiem-thu-phan-mem.git
 cd kiem-thu-phan-mem
 
 # Tạo báo cáo cho buổi bài tập mới
-python3 scripts/new_doc.py report bt-short-nhom/29-11/report \
+python3 scripts/new_doc.py report bai-tap-nhom/29-11/report \
   --kind "BÁO CÁO BÀI TẬP NHÓM TRÊN LỚP" --title "Tên bài" --short "BT 29/11"
 
 # Biên dịch (cần tectonic hoặc TeX Live – xem docs/latex.md)
-scripts/build_tex.sh bt-short-nhom/29-11/report
+scripts/build_tex.sh bai-tap-nhom/29-11/report
 
 # Không cài LaTeX: đóng gói rồi upload lên Overleaf (Compiler: XeLaTeX)
-python3 scripts/overleaf_zip.py bt-short-nhom/29-11/report
+python3 scripts/overleaf_zip.py bai-tap-nhom/29-11/report
 ```
 
 ## Quy trình làm việc (tóm tắt)
@@ -69,5 +69,5 @@ Chi tiết và các quy tắc khác (không bịa số liệu, không commit tà
 
 | Bài | Thư mục | Trạng thái |
 |---|---|---|
-| BT nhóm 22/11 – Thiết kế test case & đánh giá độ bao phủ cho mã có câu lệnh điều kiện | [`bt-short-nhom/22-11`](bt-short-nhom/22-11) | đang làm |
-| Bài tập lớn | [`btl/`](btl) | chưa chọn đề tài – xem [`docs/btl-de-tai.md`](docs/btl-de-tai.md) |
+| BT nhóm 22/11 – Thiết kế test case & đánh giá độ bao phủ cho mã có câu lệnh điều kiện | [`bai-tap-nhom/22-11`](bai-tap-nhom/22-11) | đang làm |
+| Bài tập lớn | [`bai-tap-lon/`](bai-tap-lon) | chưa chọn đề tài – xem [`docs/de-tai-bai-tap-lon.md`](docs/de-tai-bai-tap-lon.md) |

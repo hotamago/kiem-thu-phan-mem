@@ -1,8 +1,8 @@
 """Tạo báo cáo/slide mới từ template (chỉ dùng thư viện chuẩn).
 
-    python3 scripts/new_doc.py report bt-short-nhom/29-11/report \
+    python3 scripts/new_doc.py report bai-tap-nhom/29-11/report \
         --kind "BÁO CÁO BÀI TẬP NHÓM TRÊN LỚP" --title "..." --subtitle "..." --short "..."
-    python3 scripts/new_doc.py slide btl/slide --title "..." --short "..."
+    python3 scripts/new_doc.py slide bai-tap-lon/slide --title "..." --short "..."
 
 Copy templates/<report|slide>/ sang thư mục đích (phải chưa tồn tại hoặc rỗng) rồi điền các
 macro \\DocKind, \\DocTitle, \\DocSubtitle, \\DocShort, \\DocDate, \\DocLecturer trong file .tex chính.
@@ -31,7 +31,7 @@ def set_macro(text: str, name: str, value: str) -> str:
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawTextHelpFormatter)
     ap.add_argument("type", choices=sorted(MAIN))
-    ap.add_argument("dest", help="thư mục đích, vd. bt-short-nhom/29-11/report")
+    ap.add_argument("dest", help="thư mục đích, vd. bai-tap-nhom/29-11/report")
     for f in FIELDS:
         ap.add_argument(f"--{f}")
     ap.add_argument("--toc", action="store_true", help="(report) in mục lục")

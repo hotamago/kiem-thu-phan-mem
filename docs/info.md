@@ -16,6 +16,6 @@
 - Slide bài giảng + đề BTL (file zip `share_SW V&V-…zip` giảng viên chia sẻ): **không đưa lên git**
   (bản quyền GV). Mỗi người tự đặt file zip vào `docs/org/` rồi giải nén tại đó
   (`unzip -j <file>.zip -d docs/org`); thư mục này đã gitignore. Tóm tắt các hướng BTL:
-  [`btl-de-tai.md`](btl-de-tai.md).
-- Bài tập lớn: [`btl/`](../btl) – nhóm **chưa chọn đề tài**.
-- Bài tập nhóm ngắn trên lớp: [`bt-short-nhom/`](../bt-short-nhom), mỗi buổi một thư mục `DD-MM/`.
+  [`de-tai-bai-tap-lon.md`](de-tai-bai-tap-lon.md).
+- Bài tập lớn: [`bai-tap-lon/`](../bai-tap-lon) – nhóm **chưa chọn đề tài**.
+- Bài tập nhóm ngắn trên lớp: [`bai-tap-nhom/`](../bai-tap-nhom), mỗi buổi một thư mục `DD-MM/`.

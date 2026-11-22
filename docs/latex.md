@@ -7,15 +7,15 @@ Template: `templates/report/` (báo cáo, `main.tex`) và `templates/slide/` (Be
 
 ```bash
 # 1. Tạo từ template (thư mục đích phải chưa có hoặc rỗng)
-python3 scripts/new_doc.py report bt-short-nhom/29-11/report \
+python3 scripts/new_doc.py report bai-tap-nhom/29-11/report \
   --kind "BÁO CÁO BÀI TẬP NHÓM TRÊN LỚP" --title "Tên bài" --subtitle "..." --short "BT 29/11"
-python3 scripts/new_doc.py slide btl/slide --title "..." --short "BTL"
+python3 scripts/new_doc.py slide bai-tap-lon/slide --title "..." --short "BTL"
 
 # 2. Biên dịch -> PDF cạnh file .tex
-scripts/build_tex.sh bt-short-nhom/29-11/report
+scripts/build_tex.sh bai-tap-nhom/29-11/report
 
 # 3. (tuỳ chọn) render trang PDF ra PNG để soát bố cục
-uv run scripts/render_pdf.py bt-short-nhom/29-11/report/main.pdf 1 2
+uv run scripts/render_pdf.py bai-tap-nhom/29-11/report/main.pdf 1 2
 ```
 
 Sau khi tạo: sửa khối **THÔNG TIN TÀI LIỆU** đầu `main.tex` nếu cần, thay `sections/content.tex`

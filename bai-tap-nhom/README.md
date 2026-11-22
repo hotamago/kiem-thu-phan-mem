@@ -15,7 +15,7 @@ DD-MM/
 Tạo báo cáo cho buổi mới:
 
 ```bash
-python3 scripts/new_doc.py report bt-short-nhom/DD-MM/report \
+python3 scripts/new_doc.py report bai-tap-nhom/DD-MM/report \
   --kind "BÁO CÁO BÀI TẬP NHÓM TRÊN LỚP" --title "..." --short "BT DD/MM"
 ```
 

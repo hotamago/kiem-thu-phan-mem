@@ -1,6 +1,6 @@
 """Đóng gói thư mục LaTeX thành zip để upload lên Overleaf (Compiler: XeLaTeX).
 
-    python3 scripts/overleaf_zip.py bt-short-nhom/22-11/report [btl/slide ...]
+    python3 scripts/overleaf_zip.py bai-tap-nhom/22-11/report [bai-tap-lon/slide ...]
 
 Chỉ lấy file git đang theo dõi hoặc chưa bị .gitignore loại (không lấy file build, PDF slide
 của giảng viên...). Zip ghi vào build/overleaf/<đường-dẫn-nối-bằng-_>.zip (đã gitignore).
