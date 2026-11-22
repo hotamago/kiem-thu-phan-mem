@@ -102,6 +102,11 @@ Chi tiết: `docs/latex.md`. Tóm tắt:
 - Tài liệu (`docs/`, README, báo cáo, slide): **tiếng Việt có dấu đầy đủ**.
 - Code, tên biến, commit message: tiếng Anh; comment trong code tiếng Việt hoặc Anh đều được.
 - Ngày giờ trong `docs/tasks.md`: `DD/MM HH:MM`.
+- Tên file/thư mục: chữ thường, không dấu, nối bằng `-` (vd. `vi-du-days-in-month.png`); ảnh đặt
+  tên theo nội dung, không để `download.png`, `image (1).png`. Thư mục theo buổi: `DD-MM`.
+- File Markdown: có tiêu đề `#`, dùng danh sách/bảng/khối code thay cho văn bản dán thô; chép đề
+  của giảng viên nguyên văn nhưng định dạng lại. Văn bản copy từ macOS/Notion có thể ở dạng Unicode
+  tổ hợp (NFD) làm grep/tìm kiếm không khớp → chuẩn hoá về NFC trước khi commit.
 
 ## 7. Checklist nộp bài tập ngắn
 
