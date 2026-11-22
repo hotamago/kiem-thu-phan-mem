@@ -3,13 +3,16 @@
 - Học phần: **Kiểm chứng và Thẩm định phần mềm** (Software Verification & Validation), hệ cao học.
 - **Nhóm 8** – danh sách lớp & nhóm: <https://docs.google.com/spreadsheets/d/1AONtMRIjkADQN-QnViHLLAo_ScyIkxlX/edit?gid=1235241720#gid=1235241720>
 
-| STT | Họ và tên | MSHV | Lớp quản lý | Tên ngắn (dùng trong `docs/tasks.md`) |
-|---|---|---|---|---|
-| 1 | Trần Đức Tuấn Kiên (nhóm trưởng) | 20252780M | 25B-IT-KHMT | Kiên |
-| 2 | Hoàng Văn Nam | 20261263M | 26A-IT-KHMT | Nam |
-| 3 | Nguyễn Hoàng Sơn | 20261127M | 26A-IT-KHMT | Sơn |
-| 4 | Nguyễn Quang Tri | 20252779M | 25B-IT-KHMT | Tri |
-| 5 | Nguyễn Nho Trung | 20261235M | 26A-IT-KHMT | Trung |
+| STT | Họ và tên | MSHV | Lớp quản lý | GitHub | Tên ngắn (dùng trong `docs/tasks.md`) |
+|---|---|---|---|---|---|
+| 1 | Trần Đức Tuấn Kiên (nhóm trưởng) | 20252780M | 25B-IT-KHMT | [@KienTranDSAI](https://github.com/KienTranDSAI) | Kiên |
+| 2 | Hoàng Văn Nam | 20261263M | 26A-IT-KHMT | [@namhv25pt](https://github.com/namhv25pt) | Nam |
+| 3 | Nguyễn Hoàng Sơn | 20261127M | 26A-IT-KHMT | [@hotamago](https://github.com/hotamago) | Sơn |
+| 4 | Nguyễn Quang Tri | 20252779M | 25B-IT-KHMT | [@Trinq2003](https://github.com/Trinq2003) | Tri |
+| 5 | Nguyễn Nho Trung | 20261235M | 26A-IT-KHMT | [@NguyenNhoTrung](https://github.com/NguyenNhoTrung) | Trung |
+
+Tất cả đã được mời làm collaborator (quyền write) của repo – vào email hoặc
+<https://github.com/hotamago/kiem-thu-phan-mem/invitations> để chấp nhận lời mời.
 
 ## Thư mục
 

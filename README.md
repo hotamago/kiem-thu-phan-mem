@@ -3,13 +3,13 @@
 Repo làm việc chung của **Nhóm 8**, học phần **Kiểm chứng và Thẩm định phần mềm** (Software
 Verification & Validation), hệ cao học, Trường CNTT&TT – ĐHBK Hà Nội.
 
-| STT | Họ và tên | MSHV | Ghi chú |
-|---|---|---|---|
-| 1 | Trần Đức Tuấn Kiên | 20252780M | Nhóm trưởng |
-| 2 | Hoàng Văn Nam | 20261263M | |
-| 3 | Nguyễn Hoàng Sơn | 20261127M | |
-| 4 | Nguyễn Quang Tri | 20252779M | |
-| 5 | Nguyễn Nho Trung | 20261235M | |
+| STT | Họ và tên | MSHV | GitHub | Ghi chú |
+|---|---|---|---|---|
+| 1 | Trần Đức Tuấn Kiên | 20252780M | [@KienTranDSAI](https://github.com/KienTranDSAI) | Nhóm trưởng |
+| 2 | Hoàng Văn Nam | 20261263M | [@namhv25pt](https://github.com/namhv25pt) | |
+| 3 | Nguyễn Hoàng Sơn | 20261127M | [@hotamago](https://github.com/hotamago) | |
+| 4 | Nguyễn Quang Tri | 20252779M | [@Trinq2003](https://github.com/Trinq2003) | |
+| 5 | Nguyễn Nho Trung | 20261235M | [@NguyenNhoTrung](https://github.com/NguyenNhoTrung) | |
 
 > **Thành viên mới vào repo:** đọc [`AGENTS.md`](AGENTS.md) (quy ước làm việc, bắt buộc với cả
 > người lẫn agent) và [`docs/tasks.md`](docs/tasks.md) (ai đang làm gì) trước khi bắt đầu.
