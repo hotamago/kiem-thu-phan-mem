@@ -41,9 +41,10 @@ agent của họ) không làm trùng, không sửa đè lên nhau.
 
 | Thứ cần thêm | Đặt ở đâu |
 |---|---|
-| Đề một buổi bài tập ngắn | `bt-short-nhom/<DD-MM>/task.md` (+ ảnh/đính kèm cùng thư mục) |
+| Đề một buổi bài tập ngắn | `bt-short-nhom/<DD-MM>/task.md`; ảnh/file đính kèm của đề → `.../assets/` |
 | Báo cáo bài tập ngắn | `bt-short-nhom/<DD-MM>/report/` (LaTeX, tạo bằng `scripts/new_doc.py`) |
 | Mã nguồn / test của bài tập ngắn | `bt-short-nhom/<DD-MM>/src/`, `.../tests/` |
+| Hình dùng trong báo cáo | `.../report/figures/` (hình vẽ/ảnh chụp do nhóm tạo) |
 | Kết quả chạy (coverage, mutation, log) | `.../results/` – báo cáo HTML nặng thì chỉ commit bản tóm tắt (csv/txt/ảnh) |
 | BTL: mã nguồn, thực nghiệm | `btl/` (cấu trúc con chốt sau khi chọn đề tài, ghi vào `btl/README.md`) |
 | BTL: báo cáo / slide | `btl/report/`, `btl/slide/` |

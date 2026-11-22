@@ -4,8 +4,9 @@ Mỗi buổi một thư mục `DD-MM/` (ngày giao bài):
 
 ```
 DD-MM/
-├── task.md       # đề bài (chép nguyên văn) + ảnh/đính kèm của GV
-├── report/       # báo cáo LaTeX -> report/main.pdf là bản nộp
+├── task.md       # đề bài (chép nguyên văn, định dạng lại) – điểm vào của mỗi buổi
+├── assets/       # ảnh / file đính kèm của đề do GV đưa (không sửa)
+├── report/       # báo cáo LaTeX -> report/main.pdf là bản nộp; hình của báo cáo ở report/figures/
 ├── src/          # mã nguồn đối tượng kiểm thử
 ├── tests/        # test case / mã test
 └── results/      # kết quả chạy: coverage, mutation, ảnh chụp công cụ

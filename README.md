@@ -26,7 +26,7 @@ Verification & Validation), hệ cao học, Trường CNTT&TT – ĐHBK Hà Nộ
 │   ├── latex.md           # hướng dẫn viết & biên dịch báo cáo/slide
 │   └── org/               # (chỉ ở máy, gitignored) slide + đề gốc của giảng viên
 ├── bt-short-nhom/         # bài tập nhóm ngắn trên lớp, mỗi buổi một thư mục DD-MM/
-│   └── 22-11/             #   task.md (đề) · report/ (LaTeX) · src/ · tests/ · results/
+│   └── 22-11/             #   task.md (đề) · assets/ (ảnh đề) · report/ · src/ · tests/ · results/
 ├── btl/                   # bài tập lớn (chưa chọn đề tài) – report/, slide/, mã nguồn
 ├── templates/
 │   ├── report/            # template báo cáo LaTeX (XeLaTeX, style HUST đỏ/trắng)

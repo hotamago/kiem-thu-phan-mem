@@ -35,10 +35,10 @@ Trang bìa và bảng "Thông tin nhóm" của báo cáo đã có sẵn hai ph�
 
 ## Ví dụ minh hoạ của giảng viên
 
-Ảnh gốc: [`vi-du-days-in-month.png`](vi-du-days-in-month.png). Đây là ví dụ **mẫu** để tham khảo
+Ảnh gốc: [`assets/vi-du-days-in-month.png`](assets/vi-du-days-in-month.png). Đây là ví dụ **mẫu** để tham khảo
 mức độ "không quá đơn giản" – nhóm cần tự chọn đoạn mã của mình cho mục 1.
 
-![Ví dụ daysInMonth và các predicate/clause](vi-du-days-in-month.png)
+![Ví dụ daysInMonth và các predicate/clause](assets/vi-du-days-in-month.png)
 
 Mã nguồn trong ảnh (chép lại):
 
