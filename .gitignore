@@ -1,0 +1,58 @@
+# Tài liệu của giảng viên (slide, đề BTL): bản quyền GV, chỉ giữ ở máy, KHÔNG đưa lên git
+docs/org/
+docs/*.zip
+
+# Bí mật
+.env
+.env.*
+!.env.example
+**/agent-secrets/
+
+# Build LaTeX
+build/
+**/_render/
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.lol
+*.bbl
+*.blg
+*.bcf
+*.run.xml
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.xdv
+*.nav
+*.snm
+*.vrb
+
+# Python
+__pycache__/
+*.py[oc]
+.venv/
+.pytest_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+
+# Java / build tool
+target/
+*.class
+.gradle/
+**/build/
+
+# Node
+node_modules/
+
+# Editors / OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db

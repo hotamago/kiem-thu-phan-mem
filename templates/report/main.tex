@@ -1,0 +1,123 @@
+%==============================================================================
+%  Template báo cáo – Nhóm 8, Kiểm chứng và Thẩm định phần mềm (SW V&V)
+%  Style HUST đỏ/trắng (chuyển từ repo hotamago/nlp-efficient-rag).
+%  Biên dịch bằng XeLaTeX:
+%    - máy local:  scripts/build_tex.sh <thư-mục-chứa-main.tex>   (dùng tectonic hoặc latexmk)
+%    - Overleaf:   Menu -> Compiler -> XeLaTeX (đóng gói: scripts/overleaf_zip.py <thư-mục>)
+%  Chỉ sửa khối "THÔNG TIN TÀI LIỆU" ngay dưới đây và các file trong sections/.
+%==============================================================================
+\documentclass[11pt,a4paper]{article}
+
+%------------------------------------------------------------------ THÔNG TIN TÀI LIỆU
+\newcommand{\DocKind}{BÁO CÁO BÀI TẬP}            % loại tài liệu (in trên trang bìa)
+\newcommand{\DocTitle}{Tiêu đề báo cáo}            % tiêu đề chính
+\newcommand{\DocSubtitle}{Phụ đề / tên bài tập}    % dòng phụ (để trống: {})
+\newcommand{\DocShort}{Tiêu đề ngắn}               % hiện ở header mỗi trang
+\newcommand{\DocDate}{Hà Nội, tháng 11 năm 2026}
+\newcommand{\DocLecturer}{}                        % tên giảng viên (để trống thì ẩn dòng)
+\newcommand{\DocRepo}{https://github.com/hotamago/kiem-thu-phan-mem}
+\newif\iftoc \tocfalse                             % \toctrue để in mục lục
+
+%------------------------------------------------------------------ fonts (XeLaTeX)
+\usepackage{fontspec}
+\usepackage[vietnamese,english]{babel}
+% font đi kèm TeX Live / Overleaf / tectonic (không cần cài font hệ thống)
+\setmainfont{texgyretermes}[Extension=.otf, UprightFont=*-regular, BoldFont=*-bold,
+  ItalicFont=*-italic, BoldItalicFont=*-bolditalic]
+\setsansfont{texgyreheros}[Extension=.otf, UprightFont=*-regular, BoldFont=*-bold,
+  ItalicFont=*-italic, BoldItalicFont=*-bolditalic]
+\setmonofont{texgyrecursor}[Extension=.otf, UprightFont=*-regular, BoldFont=*-bold,
+  ItalicFont=*-italic, BoldItalicFont=*-bolditalic, Scale=MatchLowercase]
+
+\usepackage{microtype}
+\usepackage[a4paper,margin=2.5cm,headheight=15pt]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{etoolbox}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{booktabs,multirow,tabularx,makecell,array,longtable}
+\usepackage{caption,subcaption}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true]{hyperref}
+\usepackage{xurl}
+
+%------------------------------------------------------------------ HUST colours
+\definecolor{hustred}{HTML}{A31621}
+\definecolor{hustdark}{HTML}{5C0A14}
+\definecolor{codebg}{HTML}{FBF7F7}
+\definecolor{codegray}{HTML}{6E6E6E}
+\definecolor{codestr}{HTML}{2A6F5A}
+\definecolor{goodgreen}{HTML}{2A6F5A}
+\hypersetup{linkcolor=hustdark,urlcolor=hustred,citecolor=hustdark}
+
+%------------------------------------------------------------------ section look
+\titleformat{\section}
+  {\Large\bfseries\color{hustred}}{\thesection}{0.6em}{}
+  [{\vspace{-0.4ex}{\color{hustred}\titlerule[1.1pt]}}]
+\titleformat{\subsection}
+  {\large\bfseries\color{hustdark}}{\thesubsection}{0.5em}{}
+\titleformat{\subsubsection}
+  {\normalsize\bfseries\color{hustdark}}{\thesubsubsection}{0.5em}{}
+\titlespacing*{\section}{0pt}{2.2ex plus .2ex}{1.2ex}
+
+%------------------------------------------------------------------ headers
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\color{hustdark}\textbf{\DocShort}}
+\fancyhead[R]{\small\color{hustdark}Nhóm 8\;\textcolor{hustred}{\textbar}\;Kiểm chứng \& Thẩm định PM}
+\fancyfoot[C]{\small\color{hustdark}\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{hustred}\leaders\hrule height 1pt\hfill}}
+\renewcommand{\footrulewidth}{0pt}
+
+%------------------------------------------------------------------ code, captions, lists
+\lstset{
+  basicstyle=\ttfamily\small, keywordstyle=\color{hustred}\bfseries,
+  commentstyle=\color{codegray}\itshape, stringstyle=\color{codestr},
+  backgroundcolor=\color{codebg}, frame=single, rulecolor=\color{hustred!55},
+  framesep=6pt, xleftmargin=10pt, xrightmargin=6pt, aboveskip=1.1em, belowskip=0.6em,
+  numbers=left, numberstyle=\tiny\color{codegray}, numbersep=8pt,
+  showstringspaces=false, breaklines=true, columns=fullflexible, keepspaces=true,
+}
+\renewcommand{\lstlistingname}{Mã}
+\renewcommand{\lstlistlistingname}{Danh mục mã nguồn}
+\captionsetup{font=small,labelfont={bf,color=hustdark}}
+\setlength{\parskip}{0.35em}
+\setlength{\parindent}{0pt}
+\setlength{\emergencystretch}{3em}
+\setlist{itemsep=2pt,topsep=4pt}
+\graphicspath{{figures/}}
+
+%------------------------------------------------------------------ tiện ích
+\newcommand{\best}[1]{\textbf{#1}}
+\newcommand{\todo}[1]{\textcolor{red}{\textbf{[TODO: #1]}}}   % còn thiếu -> hiện đỏ trong PDF
+\newcommand{\pass}{\textcolor{goodgreen}{\textbf{Pass}}}
+\newcommand{\fail}{\textcolor{hustred}{\textbf{Fail}}}
+% \input mở rộng được cho phần thân bảng sinh tự động (\input thường làm hỏng \bottomrule)
+\makeatletter\newcommand{\inputtable}[1]{\@@input #1 }\makeatother
+
+%==============================================================================
+\begin{document}
+\selectlanguage{vietnamese}
+
+% pageanchor=false: tránh cảnh báo trùng anchor trang 1 giữa trang bìa và trang kế tiếp
+\hypersetup{pageanchor=false}
+\input{sections/titlepage}
+\hypersetup{pageanchor=true}
+
+\iftoc
+  \tableofcontents
+  \clearpage
+\fi
+
+\input{sections/members}
+\input{sections/content}
+
+\bibliographystyle{plainnat}
+\bibliography{refs}
+
+\end{document}

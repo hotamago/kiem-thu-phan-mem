@@ -1,0 +1,77 @@
+% Nội dung chính. File này là VÍ DỤ cách dùng template (mục, mã nguồn, bảng, hình, công thức,
+% trích dẫn) – xoá/thay bằng nội dung thật. Nội dung lớn có thể tách thành nhiều file trong
+% sections/ rồi \input{sections/<tên>} trong main.tex.
+
+\section{Ví dụ: đoạn mã cần kiểm thử}
+\label{sec:code}
+
+Đoạn mã dưới đây (ví dụ \texttt{daysInMonth} trong \citet{ammann2016introduction}) có nhiều câu
+lệnh điều kiện lồng nhau. Mã nguồn đặt trong \texttt{lstlisting}, chọn ngôn ngữ bằng
+\texttt{language=Java} (hoặc \texttt{Python}, \texttt{C}, \dots).
+
+\begin{lstlisting}[language=Java, caption={Hàm \texttt{daysInMonth}}, label={lst:days}]
+public static int daysInMonth(int m, int y) {
+    if (m <= 0 || m > 12)            // p1: invalid month
+        throw new IllegalArgumentException("Invalid month: " + m);
+    if (m == 2) {                    // p2: February
+        // p3: leap year
+        if (y % 400 == 0 || (y % 4 == 0 && y % 100 != 0))
+            return 29;
+        else
+            return 28;
+    }
+    if (m <= 7) {                    // p4
+        if (m % 2 == 1)              // p5
+            return 31;
+        return 30;
+    }
+    if (m % 2 == 0)                  // p6
+        return 31;
+    return 30;
+}
+\end{lstlisting}
+
+\section{Ví dụ: bảng test case}
+\label{sec:tests}
+
+Bảng dùng gói \texttt{booktabs} (\verb|\toprule|, \verb|\midrule|, \verb|\bottomrule|) và
+không dùng đường kẻ dọc. Bảng dài hoặc bảng sinh tự động: đặt phần thân bảng trong thư mục
+\texttt{tables/} rồi chèn bằng lệnh \verb|\inputtable{tables/<file>.tex}|.
+
+\begin{table}[h]
+\centering
+\small
+\caption{Một số test case cho \texttt{daysInMonth} (Mã~\ref{lst:days})}
+\label{tab:tests}
+\begin{tabular}{l l l l c}
+\toprule
+ID & Đầu vào $(m, y)$ & Kỳ vọng & Mục tiêu & Kết quả \\
+\midrule
+TC01 & $(0, 2024)$  & \texttt{IllegalArgumentException} & $p_1$ đúng (clause $c_1$) & \pass \\
+TC02 & $(2, 2000)$  & 29 & $p_3$ đúng ($c_4$: chia hết cho 400) & \pass \\
+TC03 & $(2, 1900)$  & 28 & $p_3$ sai ($c_6$ sai) & \pass \\
+TC04 & $(8, 2023)$  & 31 & $p_4$ sai, $p_6$ đúng & \pass \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Ví dụ: công thức, hình và trích dẫn}
+\label{sec:misc}
+
+Độ bao phủ nhánh được tính theo công thức
+\begin{equation}
+  \mathrm{BC} = \frac{\text{số nhánh đã thực thi}}{\text{tổng số nhánh}} \times 100\%.
+  \label{eq:bc}
+\end{equation}
+
+Hình đặt trong \texttt{figures/} (PDF/PNG) và chèn như Hình~\ref{fig:logo}. Trích dẫn dạng số
+\cite{fraser2011evosuite} hoặc dạng tác giả \citet{fraser2011evosuite}; khoá trích dẫn nằm trong
+\texttt{refs.bib}. Phần còn thiếu đánh dấu bằng \verb|\todo{...}|, ví dụ: \todo{bổ sung số liệu
+coverage đo bằng JaCoCo}.
+
+\begin{figure}[h]
+\centering
+\includegraphics[height=2cm]{hust_logo.png}
+\caption{Ví dụ chèn hình}
+\label{fig:logo}
+\end{figure}

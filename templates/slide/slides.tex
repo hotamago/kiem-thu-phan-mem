@@ -1,0 +1,208 @@
+%==============================================================================
+%  Template slide Beamer 16:9 – Nhóm 8, Kiểm chứng và Thẩm định phần mềm (SW V&V)
+%  Style HUST đỏ/trắng (chuyển từ repo hotamago/nlp-efficient-rag).
+%  Biên dịch bằng XeLaTeX: scripts/build_tex.sh <thư-mục> (hoặc Overleaf -> Compiler -> XeLaTeX).
+%  Chỉ sửa khối "THÔNG TIN TÀI LIỆU" và các frame bên dưới.
+%==============================================================================
+\documentclass[aspectratio=169,11pt]{beamer}
+
+%------------------------------------------------------------------ THÔNG TIN TÀI LIỆU
+\newcommand{\DocTitle}{Tiêu đề bài trình bày}
+\newcommand{\DocSubtitle}{Phụ đề / tên bài tập}
+\newcommand{\DocShort}{Tiêu đề ngắn}               % hiện ở chân mỗi slide
+\newcommand{\DocDate}{tháng 11 năm 2026}
+
+\usepackage{fontspec}
+\setmainfont{texgyreheros}[Extension=.otf, UprightFont=*-regular, BoldFont=*-bold,
+  ItalicFont=*-italic, BoldItalicFont=*-bolditalic]
+\setsansfont{texgyreheros}[Extension=.otf, UprightFont=*-regular, BoldFont=*-bold,
+  ItalicFont=*-italic, BoldItalicFont=*-bolditalic]
+\setmonofont{texgyrecursor}[Extension=.otf, UprightFont=*-regular, BoldFont=*-bold,
+  ItalicFont=*-italic, BoldItalicFont=*-bolditalic, Scale=MatchLowercase]
+\usepackage{microtype}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{listings}
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows.meta,calc,fit,backgrounds}
+\graphicspath{{figures/}}
+
+%------------------------------------------------------------------ HUST colours
+\definecolor{hustred}{HTML}{A31621}
+\definecolor{hustdark}{HTML}{5C0A14}
+\definecolor{softgray}{HTML}{8A8A8A}
+\definecolor{goodgreen}{HTML}{2A6F5A}
+\definecolor{codebg}{HTML}{FBF7F7}
+
+%------------------------------------------------------------------ beamer theme
+\usetheme{default}
+\useinnertheme{rectangles}
+\setbeamercolor{structure}{fg=hustred}
+\setbeamercolor{frametitle}{fg=hustred}
+\setbeamercolor{title}{fg=hustred}
+\setbeamercolor{itemize item}{fg=hustred}
+\setbeamercolor{itemize subitem}{fg=hustdark}
+\setbeamercolor{enumerate item}{fg=hustred}
+\setbeamercolor{block title}{bg=hustred,fg=white}
+\setbeamercolor{block body}{bg=hustred!6,fg=black}
+\setbeamercolor{alerted text}{fg=hustred}
+\setbeamerfont{frametitle}{series=\bfseries}
+\setbeamerfont{title}{series=\bfseries}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{itemize item}{\small\raise0.2pt\hbox{\textcolor{hustred}{\textbullet}}}
+\setbeamertemplate{itemize subitem}{\footnotesize\textcolor{hustdark}{--}}
+
+\setbeamertemplate{frametitle}{%
+  \vskip0.5ex%
+  \begin{beamercolorbox}[wd=\paperwidth,leftskip=0.9em,rightskip=0.9em]{frametitle}%
+    {\usebeamerfont{frametitle}\normalsize\insertframetitle}\par%
+    \vskip0.25ex{\color{hustred}\hrule height 0.8pt}%
+  \end{beamercolorbox}%
+  \vskip0.2ex%
+}
+\setbeamertemplate{footline}{%
+  \hbox{%
+    \begin{beamercolorbox}[wd=.5\paperwidth,ht=1.6ex,dp=0.8ex,leftskip=1em]{}%
+      {\tiny\color{hustdark}\textbf{\DocShort}\;\textcolor{hustred}{\textbar}\;Nhóm 8 -- Kiểm chứng \& Thẩm định PM}%
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.5\paperwidth,ht=1.6ex,dp=0.8ex,rightskip=1em]{}%
+      \hfill{\tiny\color{hustdark}\insertframenumber\,/\,\inserttotalframenumber}%
+    \end{beamercolorbox}%
+  }%
+  \vskip1.5pt%
+}
+
+\lstset{
+  basicstyle=\ttfamily\scriptsize, keywordstyle=\color{hustred}\bfseries,
+  commentstyle=\color{softgray}\itshape, stringstyle=\color{goodgreen},
+  backgroundcolor=\color{codebg}, frame=single, rulecolor=\color{hustred!55},
+  showstringspaces=false, breaklines=true, columns=fullflexible, keepspaces=true,
+}
+
+
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}
+\newcommand{\best}[1]{\textbf{\color{hustred}#1}}
+\newcommand{\todo}[1]{\textcolor{red}{\textbf{[TODO: #1]}}}
+\makeatletter\newcommand{\inputtable}[1]{\@@input #1 }\makeatother
+\newcommand{\takeaway}[1]{{\footnotesize\itshape\color{hustdark}\textbf{Ý chính.} #1\par}}
+
+\title{\DocTitle}
+\date{\small\DocDate}
+
+\begin{document}
+
+%================================================================ TRANG BÌA
+{
+\setbeamertemplate{footline}{}
+\begin{frame}[plain]
+  \centering
+  {\color{hustred}\rule{\textwidth}{2pt}}\\[0.8ex]
+  {\footnotesize\bfseries ĐẠI HỌC BÁCH KHOA HÀ NỘI}\\[0.2ex]
+  {\scriptsize\itshape Trường Công nghệ Thông tin và Truyền thông}\\[1.2ex]
+  \includegraphics[height=1.7cm]{hust_logo.png}\\[0.9ex]
+  {\Large\bfseries\color{hustred} \DocTitle}\\[0.4ex]
+  {\normalsize\bfseries \DocSubtitle}\\[0.5ex]
+  {\footnotesize Học phần: Kiểm chứng và Thẩm định phần mềm}\\[1.0ex]
+  {\color{hustred}\rule{0.8\textwidth}{0.8pt}}\\[0.9ex]
+  {\scriptsize
+  \begin{tabular}{@{}r@{\hskip 1.2em}l@{\hskip 1.2em}l@{}}
+  \textbf{Nhóm 8} & Trần Đức Tuấn Kiên (nhóm trưởng) & 20252780M \\
+                  & Hoàng Văn Nam                    & 20261263M \\
+                  & Nguyễn Hoàng Sơn                 & 20261127M \\
+                  & Nguyễn Quang Tri                 & 20252779M \\
+                  & Nguyễn Nho Trung                 & 20261235M \\
+  \end{tabular}}\\[0.8ex]
+  {\scriptsize \DocDate}\\[0.4ex]
+  {\color{hustred}\rule{\textwidth}{2pt}}
+\end{frame}
+}
+
+%================================================================ NỘI DUNG
+\begin{frame}{Nội dung}
+  \begin{columns}[T]
+    \begin{column}{0.5\textwidth}
+      \textbf{\color{hustred}I. Bài toán}
+      \begin{itemize}\setlength\itemsep{0.2em}
+        \item \todo{ý 1}
+        \item \todo{ý 2}
+      \end{itemize}
+      \vspace{0.6em}
+      \textbf{\color{hustred}II. Phương pháp}
+      \begin{itemize}\setlength\itemsep{0.2em}
+        \item \todo{ý 1}
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \textbf{\color{hustred}III. Kết quả}
+      \begin{itemize}\setlength\itemsep{0.2em}
+        \item \todo{ý 1}
+      \end{itemize}
+      \vspace{0.6em}
+      \textbf{\color{hustred}IV. Tổng kết}
+      \begin{itemize}\setlength\itemsep{0.2em}
+        \item Demo · hạn chế · kết luận
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+%================================================================ VÍ DỤ: CHỮ + KHỐI
+\begin{frame}{Ví dụ: hai cột chữ và khối nhấn mạnh}
+  \begin{columns}[T]
+    \begin{column}{0.54\textwidth}
+      \small
+      \begin{itemize}\setlength\itemsep{0.4em}
+        \item Mỗi slide một ý chính, chữ ít, \textbf{số in đậm}.
+        \item Hình đặt trong \texttt{figures/}, bảng dài đặt trong \texttt{tables/}.
+        \item Phần chưa xong đánh dấu \texttt{\textbackslash todo\{...\}} để cả nhóm thấy.
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.42\textwidth}
+      \begin{block}{\small Câu hỏi nghiên cứu}
+        \scriptsize
+        \textbf{RQ1.} \todo{câu hỏi 1}\\[0.3em]
+        \textbf{RQ2.} \todo{câu hỏi 2}
+      \end{block}
+    \end{column}
+  \end{columns}
+  \vfill
+  \takeaway{Dòng tóm tắt cuối slide: người nghe nhớ được gì.}
+\end{frame}
+
+%================================================================ VÍ DỤ: MÃ + BẢNG
+\begin{frame}[fragile]{Ví dụ: mã nguồn và bảng kết quả}
+  \begin{columns}[T]
+    \begin{column}{0.5\textwidth}
+\begin{lstlisting}[language=Java]
+if (m == 2) {
+    if (y % 400 == 0 ||
+        (y % 4 == 0 && y % 100 != 0))
+        return 29;   // leap year
+    return 28;
+}
+\end{lstlisting}
+    \end{column}
+    \begin{column}{0.46\textwidth}
+      \scriptsize
+      \begin{tabularx}{\linewidth}{@{}l R R@{}}
+        \toprule
+        \textbf{\color{hustred}Phương pháp} & \textbf{\color{hustred}Stmt \%} & \textbf{\color{hustred}Branch \%} \\
+        \midrule
+        Thủ công & \todo{} & \todo{} \\
+        Công cụ  & \todo{} & \todo{} \\
+        \bottomrule
+      \end{tabularx}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+%================================================================ KẾT
+\begin{frame}[plain]
+  \centering\vfill
+  {\Large\bfseries\color{hustred} Cảm ơn thầy cô và các bạn đã lắng nghe!}\\[1ex]
+  {\small Hỏi \& đáp}
+  \vfill
+\end{frame}
+
+\end{document}
